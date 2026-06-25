@@ -1,29 +1,29 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/index.php",
-      "use": "vercel-php@0.9.0",
-      "config": {
-        "runtime": "php8.1",
-        "documentRoot": "public"
-      }
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.9.0",
+            "config": {
+                "runtime": "php8.1",
+                "documentRoot": "public"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_NAME": "Klinik Mahasiswa",
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "DB_CONNECTION": "mysql",
+        "CACHE_DRIVER": "array",
+        "SESSION_DRIVER": "cookie",
+        "QUEUE_CONNECTION": "sync",
+        "LOG_CHANNEL": "stderr"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
-    }
-  ],
-  "env": {
-    "APP_NAME": "Klinik Mahasiswa",
-    "APP_ENV": "production",
-    "APP_DEBUG": "false",
-    "DB_CONNECTION": "mysql",
-    "CACHE_DRIVER": "array",
-    "SESSION_DRIVER": "cookie",
-    "QUEUE_CONNECTION": "sync",
-    "LOG_CHANNEL": "stderr"
-  }
 }
