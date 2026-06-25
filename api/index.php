@@ -1,6 +1,8 @@
 <?php
 
 // Vercel PHP Serverless Entry Point for Laravel
+ini_set('display_errors', '0');
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 // Storage paths are redirected to /tmp which is writable in serverless environments
 
 define('LARAVEL_START', microtime(true));
